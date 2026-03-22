@@ -1,4 +1,4 @@
-import { TrendingUp, Clock, Users, DollarSign, ExternalLink, ChevronDown, ChevronUp, Linkedin, MessageSquare, Receipt } from "lucide-react";
+import { TrendingUp, Clock, Users, DollarSign, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 
@@ -18,6 +18,7 @@ const caseStudies = [
     client: "Coaching & Consulting Firm",
     industry: "Coaching & Consulting",
     category: "Appointment & Booking Automation",
+    demoUrl: "https://your-demo-link-1.com", // 🔗 Replace with your Loom/YouTube link
     problem: "High no-show rates and hours spent on manual scheduling, confirmations, and follow-ups.",
     solution: "n8n + Calendly + Google Sheets → full booking flow with auto-confirmations, reminders & post-session follow-ups.",
     results: [
@@ -34,6 +35,7 @@ const caseStudies = [
     client: "SaaS Startup",
     industry: "SaaS / Technology",
     category: "AI Support & Chat Agents",
+    demoUrl: "https://your-demo-link-2.com", // 🔗 Replace with your Loom/YouTube link
     problem: "Support team overwhelmed with tier-1 tickets, slow response times hurting retention.",
     solution: "OpenAI + n8n + Intercom → AI chatbot handling FAQs, qualifying leads, and routing complex issues to agents.",
     results: [
@@ -50,6 +52,7 @@ const caseStudies = [
     client: "Online Retail Brand",
     industry: "E-commerce",
     category: "E-commerce & Order Flows",
+    demoUrl: "https://your-demo-link-3.com", // 🔗 Replace with your Loom/YouTube link
     problem: "Manual lead tracking from Facebook Ads with slow follow-ups causing lost sales.",
     solution: "n8n + GoHighLevel + Facebook API → automated lead capture, CRM tagging, and instant email nurture sequences.",
     results: [
@@ -66,6 +69,7 @@ const caseStudies = [
     client: "B2B Agency",
     industry: "Marketing & Sales",
     category: "Lead Generation & CRM Sync",
+    demoUrl: "https://your-demo-link-4.com", // 🔗 Replace with your Loom/YouTube link
     problem: "Manual LinkedIn prospecting taking 20+ hours/week with low connection-to-meeting conversion.",
     solution: "n8n + OpenAI + LinkedIn API → automated profile scraping, personalized message drafting, and CRM logging.",
     results: [
@@ -82,6 +86,7 @@ const caseStudies = [
     client: "DTC Fashion Brand",
     industry: "E-commerce",
     category: "E-commerce & Order Flows",
+    demoUrl: "https://your-demo-link-5.com", // 🔗 Replace with your Loom/YouTube link
     problem: "Customers missing order updates via email, leading to high support volume about order status.",
     solution: "n8n + WhatsApp Business API + Shopify → real-time order confirmations, shipping updates, and delivery alerts.",
     results: [
@@ -98,6 +103,7 @@ const caseStudies = [
     client: "Freelance Agency",
     industry: "Finance & Operations",
     category: "Custom Integrations",
+    demoUrl: "https://your-demo-link-6.com", // 🔗 Replace with your Loom/YouTube link
     problem: "Manual invoice entry into accounting software causing delays and errors in financial reporting.",
     solution: "n8n + Stripe + QuickBooks → auto-generate invoices on payment, sync to accounting, and send receipts.",
     results: [
@@ -234,10 +240,16 @@ const ProjectCard = ({ study, delay }: ProjectCardProps) => (
           ))}
         </div>
 
-        <button className="mt-3 flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-semibold text-primary border border-primary/30 bg-primary/5 hover:bg-primary/10 transition-colors duration-200">
+        {/* ✅ UPDATED: Now a real clickable link */}
+        <a
+          href={study.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-semibold text-primary border border-primary/30 bg-primary/5 hover:bg-primary/10 transition-colors duration-200"
+        >
           <ExternalLink className="w-4 h-4" />
           View Workflow Demo
-        </button>
+        </a>
       </div>
     </div>
   </AnimatedSection>
